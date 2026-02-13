@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to SQL</title>
+</head>
+<body>
+    <h1>Introduction to SQL</h1>
+
+    <h2>How To Extract Data</h2>
+    <ul>
+        <li>SELECT * FROM table_name - Select everything in table_name</li>
+            <ul>
+                <li>SELECT * FROM my_table</li>
+            </ul>
+        <li>SELECT column_name from (table_name) - Select column or columns in table_name</li>
+            <ul>
+                <li>SELECT name from my_table</li>
+            </ul>
+        <li>SELECT * FROM table_name WHERE column_name = value - Select everything from table where column_name = value</li>
+            <ul>
+                <li>SELECT * FROM my_table WHERE name = 'Jane Doe'</li>
+            </ul>
+        <li>SELECT * FROM table_name WHERE column_name (<,>) value - Select everything from table where column_name (<,>) value</li>
+            <ul>
+                <li>SELECT * FROM my_table WHERE age > 20</li>
+            </ul>
+        <li>SELECT * FROM table_name WHERE column_name LIKE value(example = 'S% starts with s','%S endswith s') - Select everything from table_name where column is similar to the value </li>
+            <ul>
+                <li>SELECT * FROM my_table WHERE name LIKE 'J%'</li>
+            </ul>
+    </ul>
+    <br>
+
+    <h2>How To Insert Data</h2>
+    <ul>
+        <li>INSERT INTO table_name (column_names) VALUES (values)</li>
+            <ul>
+                <li>INSERT INTO my_table (name,age) VALUES ('Jane Doe',20)</li>
+            </ul>
+    </ul>
+    <br>
+
+    <h2>How To Update Data</h2>
+    <ul>
+        <li>UPDATE (table_name) SET column_name = value WHERE column_name = value</li>
+            <ul>
+                <li>UPDATE my_table SET age = 20 WHERE name = 'Jane Doe'</li>
+            </ul>
+    </ul>
+    <br>
+
+    <h2>How To Remove Data</h2>
+    <ul>
+        <li>DELETE FROM table_name WHERE column_name = value</li>
+            <ul>
+                <li>DELETE FROM my_table WHERE name = 'Jane Doe'</li>
+            </ul>
+    </ul>
+    <br>
+
+    <h2>How To Create Table</h2>
+    <ul>
+        <li>CREATE TABLE IF NOT EXISTS table_name (column_name (column_value_type column_features))</li>
+            <ul>
+                <li>CREATE TABLE IF NOT EXISTS data (id INTEGER PRIMARY KEY AUTO INCREMENT, name VARCHAR(20), surname VARCHAR(20), age INTEGER)</li>
+            </ul>
+    </ul>
+</body>
+</html>
