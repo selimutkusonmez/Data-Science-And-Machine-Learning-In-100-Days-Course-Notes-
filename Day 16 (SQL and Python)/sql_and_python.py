@@ -23,7 +23,7 @@ def create_tables(cursor : sqlite3.Cursor):
     CREATE TABLE IF NOT EXISTS Courses (
                                         id INTEGER PRIMARY KEY,
                                         course_name VARCHAR(255) NOT NULL,
-                                        insturctor TEXT,
+                                        instructor TEXT,
                                         credits INTEGER
                                         )
                     ''')
