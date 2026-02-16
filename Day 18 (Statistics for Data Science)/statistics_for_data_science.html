@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics For Data Science</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6; /* Okunabilirlik için satır yüksekliği eklendi */
+        }
+    .formula-container {
+        display: flex;
+        justify-content: left;
+        gap: 100px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .formula {
+        font-size: 2em;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h1>Statistics For Data Science</h1>
+    <br>
+    <h2>Types of Statistics</h2>
+    <ul>
+        <li><strong>Descriptive Statistics</strong> (Summarizing data)</li>
+            <ul>
+                <li>Measures of Central Tendency (Mean, Median, Mode)</li>
+                <li>Measures of Dispersion (Variance, Standard Deviation, Range)</li>
+                <li>Distribution shape (Skewness, Kurtosis)</li>
+            </ul>
+        </li>
+        <li><strong>Inferential Statistics</strong> (Drawing conclusions)</li>
+            <ul>
+                <li>Sampling methods</li>
+                <li>Hypothesis testing</li>
+                <li>Confidence intervals</li>
+                <li>Regression analysis</li>
+                <li>Predicting population properties from a sample</li>
+            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li><strong>Population ($N$):</strong> The complete set of items or events under study.</li>
+        <li><strong>Sample ($n$):</strong> A subset of the population selected for analysis.</li>
+    </ul>
+    <br>
+
+    <h1>Measures Of Central Tendency</h1>
+
+    <h2>Population Mean &emsp;&emsp; Sample Mean</h2>
+    <div class="formula-container">
+        <div class="formula">
+            $$ \mu = \frac{\sum x}{N} $$
+        </div>
+        <div class="formula">
+            $$ \bar{x} = \frac{\sum x}{n} $$
+        </div>
+    </div>
+    <br>
+    <p><strong>Grades = [30, 40, 50, 70, 50, 90]</strong></p>
+    <p><strong>Mean = (30 + 40 + 50 + 70 + 50 + 90) / 6 = 55</strong></p>
+    <br>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError : false
+            });
+        });
+    </script>
+
+    <h1>Median</h1>
+    <p>The middle value when data is sorted.</p>
+    <p><strong>Grades (Sorted): [40, 50, 60, 70, 80, 100, 120]</strong></p>
+    <p><strong>Mean (Average): 74.2</strong></p>
+    <p><strong>Median: 70</strong> (Since $n=7$, the 4th term is the median)</p>
+
+    <h2>Outlier Impact</h2>
+    <p><em>Notice how outliers affect the Mean but not the Median.</em></p>
+    <p><strong>Grades (with Outlier): [40, 50, 60, 70, 80, 100, 120, 1500]</strong></p>
+    <p><strong>Mean (Average): 252.5</strong> (Heavily affected by 1500)</p>
+    <p><strong>Median: (70 + 80) / 2  = 75</strong></p>
+    <br>
+
+    <h1>Mode</h1>
+    <p>Mode: The value that appears most frequently in a dataset.</p>
+    <p>Grades: [<strong>40, 40, 40, 40, 40</strong>, 50, 60, 70, 80, 90, 100]</p>
+    <p><strong>Mode: 40</strong></p>
+    <br>
+
+    <h1>Measures of Dispersion (Spread)</h1>
+    <br>
+    <h2>Variance</h2>
+    <p><strong>Variance measures how far a set of numbers is spread out from their average value.</strong></p>
+    <h2>&emsp;Population Variance &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Sample Variance</h2>
+    <div class="formula-container">
+        <div class="formula">
+            $$ \sigma^2 = \frac{\sum (x - \mu)^2}{N} $$
+        </div>
+
+        <div class="formula">
+            $$ s^2 = \frac{\sum (x - \bar{x})^2}{n - 1} $$
+        </div>
+    </div>
+    <br>
+    <br>
+    <h2>Standard Deviation</h2>
+    <p><strong>Standard Deviation indicates typical deviation from the mean. Ideally, low SD means data is clustered around the mean.</strong></p>
+    <p><strong>It is simply the square root of the variance, bringing the unit back to the original data scale (e.g., from $cm^2$ to $cm$).</strong></p>
+    <h2>&emsp;Population Std. Dev. &emsp;&emsp;&emsp; Sample Std. Dev.</h2>
+    <div class="formula-container">
+        <div class="formula">
+            $$ \sigma = \sqrt{\frac{\sum (x - \mu)^2}{N}} $$
+        </div>
+
+        <div class="formula">
+            $$ s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}} $$
+        </div>
+    </div>
+    <br>
+
+    <h1>Variables</h1>
+    <p>A variable is any characteristic, number, or quantity that can be measured or counted.</p>
+    
+    <h2>1. Numerical (Quantitative) Variables</h2>
+    <ul>
+        <li><strong>Continuous Variable</strong> (Measurable, infinite possibilities within a range)</li>
+            <ul>
+                <li>Student's exam grade: (e.g., 85.5, 90.3)</li>
+                <li>Student's height: (e.g., 165.2 cm, 183.4 cm)</li>
+                <li>Teacher's Salary: (e.g., $100,354.50)</li>
+            </ul>
+        <li><strong>Discrete Variable</strong> (Countable, distinct values)</li>
+            <ul>
+                <li>Number of students in a classroom: (e.g., 25, 30, 35)</li>
+                <li>Number of active classes: (e.g., 4, 5, 6)</li>
+            </ul>
+    </ul>
+    
+    <h2>2. Categorical (Qualitative) Variables</h2>
+    <ul>
+        <li><strong>Nominal Variables</strong> (Labels with no natural order)</li>
+            <ul>
+                <li>Student's major (Math, CS, Physics)</li>
+                <li>Gender (Male, Female, Other)</li>
+                <li>Colors (Red, Blue, Green)</li>
+            </ul>
+        <li><strong>Ordinal Variables</strong> (Labels with a logical/ranked order)</li>
+            <ul>
+                <li>Education level (High School < Bachelor's < Master's < PhD)</li>
+                <li>Letter grades (A, B, C, D, F)</li>
+                <li>Customer satisfaction (Happy, Neutral, Unhappy)</li>
+            </ul>
+    </ul>
+    
+    <h2>Random Variables</h2>
+    <p>A variable whose value is unknown or a function that assigns values to each of an experiment's outcomes.</p>
+    <ul>
+        <li><strong>Discrete Random Variable:</strong> X = Number of heads in 10 coin tosses.</li>
+        <li><strong>Continuous Random Variable:</strong> X = Exact time it takes to run 100 meters.</li>
+    </ul>
+
+</body>
+</html>
