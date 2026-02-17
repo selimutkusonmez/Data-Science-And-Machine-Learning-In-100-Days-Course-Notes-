@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Importand Probability Subjects</title>
+
+    <style>
+
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    .formula-container {
+        display: flex;
+        justify-content: left;
+        gap: 100px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .formula {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    </style>
+
+
+
+</head>
+<body>
+    <h1>Introduction to Probability</h1>
+    <p><strong>Definition : </strong>Probability is a mathematical term that measures the likelihood of an event's occuring</p>
+    <p><strong>0 : </strong>Impossible to occur</p>
+    <p><strong>1 : </strong>Certain to occur</p>
+    <p><strong>0.5 : </strong>Unlikely</p>
+    <div class="formula-container">
+    <div class="formula">
+        $$ P(A) = \frac{\text{Number of wanted occasions}}{\text{Number of all possible occasions}} $$
+    </div>
+    </div>
+
+    <br>
+    <h2>Probability Rules</h2>
+    <table>
+    <tr>
+        <th>Rule</th>
+        <th>Formula</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td><strong>Addition Rule</strong><br>(Mutually Exclusive)</td>
+        <td>P(A &cup; B) = P(A) + P(B)</td>
+        <td>Rolling a die and getting a 2 or a 5</td>
+    </tr>
+    <tr>
+        <td><strong>Addition Rule</strong><br>(Non-Mutually Exclusive)</td>
+        <td>P(A &cup; B) = P(A) + P(B) &minus; P(A &cap; B)</td>
+        <td>Drawing a Heart or a Face card from a deck</td>
+    </tr>
+    <tr>
+        <td><strong>Multiplication Rule</strong><br>(Independent Events)</td>
+        <td>P(A &cap; B) = P(A) &times; P(B)</td>
+        <td>Flipping a coin and rolling a die</td>
+    </tr>
+    <tr>
+        <td><strong>Multiplication Rule</strong><br>(Dependent Events)</td>
+        <td>P(A &cap; B) = P(A) &times; P(B|A)</td>
+        <td>Drawing two Aces from a deck (without replacement)</td>
+    </tr>
+    </table>
+</body>
+</html>
