@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Distribution Functions</title>
+
+<style>
+    body{
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    .formula-container {
+        display: flex;
+        justify-content: left;
+        gap: 100px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .formula{
+        font-size: 2em;
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+    <h1>What is PMF (Probability Mass Function)</h1>
+    <p><strong>Definition : </strong>PMF is a function that shows the probability of the value that discrete random variables can take</p>
+    <p><strong>Example : </strong>Here's an example of a call center's daily call numbers</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ P(X &equals; x) = f(x) $$
+        </div>
+    </div>
+    <img src="DistributionFunctions/pmf.jpg" alt="PMF" width="700" height="400">
+    <br>
+
+    <h1>What is PDF (Probability Density Function)</h1>
+    <p><strong>Definition : </strong>PDF is a function that shows the probability of the value that continuous random variables can take</p>
+    <p><strong>Example : </strong>Students height graph of a high school</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ P(a &le; X &le; b) = \int_{a}^{b} f(x)dx $$
+        </div>
+        <div class="formula">
+            $$ f(x) &GreaterEqual; 0 $$
+        </div>
+    </div>
+    <img src="DistributionFunctions/pdf.jpg" alt="PDF" width="700" height="400">
+    <br>
+
+    <h1>What is CDF (Cumulative Distribution Function)</h1>
+    <p><strong>Definition : </strong> CDF shows us the total possibility of a value range that a random variable can have</p>
+    <p><strong>Example : </strong> When we roll a die the total possibility of every possible event</p>
+        <div class="formula-container">
+        <div class="formula">
+            $$ P(X &le; 1) &equals; 1/6 $$
+            $$ P(X &le; 2) &equals; 2/6 $$
+            $$ P(X &le; 3) &equals; 3/6 $$
+            $$ P(X &le; 4) &equals; 4/6 $$
+            $$ P(X &le; 5) &equals; 5/6 $$
+            $$ P(X &le; 6) &equals; 6/6 $$
+        </div>
+    </div>
+    <img src="DistributionFunctions/cdf.jpg" alt="CDF" width="700" height="400">
+    <br>
+
+    <h1>Bernoulli Distribution</h1>
+    <p><strong>Definition : </strong> Bernoulli Distribution is a basic probability distribution that shows us events that have only 2 possible outcomes</p>
+    <p><strong>Example : </strong> The possibilities of heads and tailf when tossing a coin</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ P(X=k) = \begin{cases} p, & k=1 \\ 1-p, & k=0 \end{cases} $$
+        </div>
+    </div>
+    <img src="DistributionFunctions/bernoulli_pmf.jpg" alt="Bernoulli Distribution" width="700" height="400">
+    <br>
+
+    <h1>Binomial Distribution</h1>
+    <p><strong>Definition : </strong>The Binomial Distribution describes the number of successes in n independent Bernoulli trials with the same probability.</p>
+    <p><strong>Example : </strong>Tossing a coin 10 times and landing on heads</p>
+    <div class="formula-container">
+        <div class="formula">
+        $$ P(X=k) = \binom{n}{k} p^k (1-p)^{n-k} $$
+        </div>
+    </div>
+    <img src="DistributionFunctions/binomial_pmf.jpg" alt="Binomial Distribution" width="700" height="400">
+
+</body>
+</html>
