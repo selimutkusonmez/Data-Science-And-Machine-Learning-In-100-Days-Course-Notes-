@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Other Distribution Functions</title>
+
+<style>
+    body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    .formula-container {
+        display: flex;
+        justify-content: left;
+        gap: 100px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .formula {
+        font-size: 2em;
+        text-align: center;
+    }
+</style>   
+</head>
+<body>
+    <h1>Poisson Distribution</h1>
+    <p><strong>Definition : </strong>Poisson Distribution is used to calculate the possiblity of the event that takes place in a certain time or place</p>
+    <p><strong>Example : A call centers daily call number</strong></p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!} $$
+        </div>
+    </div>
+    <h3>Poisson Distribution CDF</h3>
+    <div class="formula-container">
+        <div class="formula">
+            $$ F(k) = P(X \le k) = \sum_{i=0}^{k} \frac{\lambda^i e^{-\lambda}}{i!} $$
+        </div>
+    </div>
+    <img src="OtherDistributionFunctions/poisson_distribution.jpg" alt="Poisson Distribution" width="700" height="400">
+    <br>
+    
+    <h1>Normal Distribution (Continuous Variables)</h1>
+    <p><strong>Definition : </strong>The Normal Distribution is the most common distribution used to describe the probabilities of various phenomena./p>
+    <p><strong>Example : </strong>Human height distribution/p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} $$
+        </div>
+    </div>
+    <h3>Normal Distribution CDF</h3>
+    <div class="formula-container">
+        <div class="formula">
+            $$F(x) = \frac{1}{\sqrt{2\pi}\sigma} \int_{-\infty}^{x} e^{-\frac{(t-\mu)^2}{2\sigma^2}} dt$$
+        </div>
+    </div>
+
+    <img src="OtherDistributionFunctions/normal_disribution.jpg" alt="Normal Distribution" width="700" height="400">
+    <br>
+
+    <h1>Standard Normal Distribution</h1>
+    <p><strong>Definition : </strong>Standard Normal Deviation is a special type of Normal Distribution and it has these features.</p>
+        <ul>
+            <li>Mean (&micro;) : 0</li>
+            <li>Standard Deviation (&sigma;) : 1</li>
+        </ul>
+    <p><strong>Example : </strong></p>
+    <div class="formula-container">
+        <div class="formula">
+            $$f(z) = \frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}$$
+        </div>
+    </div>
+    <h2>Z Score</h2>
+    <p><strong>Definition : </strong>A Z-score shows us how many standard deviations a data point is away from the mean.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ Z = \frac{X &minus; &micro;}{&sigma;} $$
+        </div>
+    </div>
+    <br>
+
+    <h1>Uniform Distribution</h1>
+    <p><strong>Definition : </strong>Uniform Distribution is a probability distribution where every value within a spesific range has the same proabability</p>
+    <p><strong>Example : </strong> Lottery</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$f(x) = \begin{cases} \frac{1}{b-a}, & a \le x \le b \\ 0, & \text{other cases} \end{cases}$$
+        </div>
+    </div>
+    <h3>Uniform Distribution CDF</h3>
+    <div class="formula-container">
+        <div class="formula">
+            $$F(x) = \begin{cases} 0, & x < a \\ \frac{x-a}{b-a}, & a \le x \le b \\ 1, & x > b \end{cases}$$
+        </div>
+    </div>
+    <img src="OtherDistributionFunctions/uniform_distribution.jpg" alt="Uniform Distribution" width="700" height="400">
+    <br>
+
+    <h1>Log Normal Distribution</h1>
+    <p><strong>Definition : </strong>Log-Normal Distribution is where the logarithm of the values is normally distributed</p>
+    <p><strong>Example : </strong>Income Distribution</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$f(x) = \frac{1}{x\sigma\sqrt{2\pi}} e^{-\frac{(\ln x - \mu)^2}{2\sigma^2}} , \quad x > 0$$
+        </div>
+    </div>
+
+    <h3>Log-Normal Distribution CDF</h3>
+    <div class="formula-container">
+        <div class="formula">
+            $$ F(x) = P(X \le x) = \frac{1}{2}\left(1 + \operatorname{erf}\left(\frac{\ln x - \mu}{\sigma\sqrt{2}}\right)\right) $$
+    </div>
+    </div>
+    <img src="OtherDistributionFunctions/log_normal_distribution.jpg" alt="Log-Normal Distribution" width="700" height="400">
+    <br>
+
+    <h1>Pareto Distribution</h1>
+    <p><strong>Definition : </strong>A Pareto Distribution is a skewed, heavy-tailed probability distribution often used to describe the 80/20 rule, where a small percentage of causes produces a large percentage of effects.</p>
+    <p><strong>Example : </strong>City Populations</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$f(x) = \frac{\alpha x_m^\alpha}{x^{\alpha+1}}, \quad x \ge x_m$$
+        </div>
+    </div>
+
+    <h3>Pareto Distribution CDF</h3>
+    <div class="formula-container">
+        <div class="formula">
+            $$ F(x) = 1 - \left(\frac{x_m}{x}\right)^\alpha, \quad x \ge x_m $$
+        </div>
+    </div>
+    <img src="OtherDistributionFunctions/pareto_distribution.jpg" alt="Oareto Distribution" width="700" height="400">
+</body>
+</html>
