@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Hypothesis Tests</title>
+</head>
+<style>
+    body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    .formula-container {
+        display: flex;
+        justify-content: left;
+        gap: 100px;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .formula {
+        font-size: 2em;
+        text-align: center;
+    }
+</style> 
+<body>
+    <h1>Central Limit Theorem</h1>
+    <p><strong>Definition : </strong>The Central Limit Theorem states that the distribution of sample means will approximate a normal distribution (a bell curve) as the sample size gets larger, regardless of the population's original distribution.</p>
+    <p><strong>Example : </strong>If you roll a six-sided die 100 times, the distribution of the average of those rolls over multiple trials will form a bell curve, even though a single die roll has a flat (uniform) distribution.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$\bar{X} \approx N\left(\mu, \frac{\sigma^2}{n}\right)$$
+        </div>
+    </div>
+    <br>
+
+    <h1>Confidence Interval </h1>
+    <p><strong>Definition : </strong>A range of values, derived from sample data, that is likely to contain the value of an unknown population parameter with a specified level of confidence (e.g., 95% or 99%).</p>
+    <p><strong>Example : </strong>Based on our sample, we are 95% confident that the true average height of adult men in the city is between 172 cm and 178 cm.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$\bar{X} \pm Z^* \frac{\sigma}{\sqrt{n}}$$
+        </div>
+    </div>
+
+    <h1>Margin Of Error</h1>
+    <p><strong>Definition : </strong>The maximum expected difference between the true population parameter and the sample estimate. It reflects the uncertainty in your sample statistic.</p>
+    <p><strong>Example : </strong>A political poll states a candidate has 48% support with a margin of error of ±3%. This means the true support is likely between 45% and 51%.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$ME = Z^* \frac{\sigma}{\sqrt{n}}$$
+        </div>
+    </div>
+    <br>
+
+    <h1>Hypothesis Testing</h1>
+    <p><strong>Definition : </strong>A statistical method used to make decisions or inferences about a population parameter based on sample data.</p>
+    <h2>Hypothesis Types</h2>
+    <ul>
+        <li>Null Hypothesis ($H_0$)</li>
+        <li>Alternative Hypothesis ($H_A$)</li>
+    </ul>
+    <h2>Hypothesis Testing Steps</h2>
+    <ul>
+        <li>State the Null and Alternative hypotheses.</li>
+        <li>Choose the significance level ($\alpha$), typically 0.05.</li>
+        <li>Select and compute the appropriate test statistic (e.g., Z-score, T-score).</li>
+        <li>Determine the p-value or critical value.</li>
+        <li>Make a decision to either reject or fail to reject the Null Hypothesis.</li>
+    </ul>
+    <br>
+
+    <h1>Z Test</h1>
+    <p><strong>Definition : </strong>A statistical test used to determine whether two population means are different when the population variance is known and the sample size is large ($n \ge 30$).</p>
+    <p><strong>Example : </strong>Comparing the average math scores of 50 students from one school to the known national average and standard deviation to see if the school's performance is significantly different.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}$$
+        </div>
+    </div>
+    
+    <h1>One-Tailed and Two-Tailed Tests</h1>
+    <h2>One-Tailed Test</h2>
+    <ul>
+        <li>Tests for a significant effect in one specific direction (greater than OR less than).</li>
+        <li>The alternative hypothesis uses $>$ or $<$ symbols.</li>
+        <li>The entire significance level ($\alpha$) is placed in one end of the distribution tail.</li>
+        <li>Provides more statistical power to detect an effect in the chosen direction.</li>
+        <li>Ignores the possibility of a significant effect in the opposite direction.</li>
+    </ul>
+    <h2>Two-Tailed Test</h2>
+    <ul>
+        <li>Tests for a significant effect in either direction (greater than AND less than).</li>
+        <li>The alternative hypothesis uses the $\neq$ (not equal to) symbol.</li>
+        <li>The significance level ($\alpha$) is split equally between both ends of the tails ($\alpha/2$).</li>
+        <li>Prevents you from missing a significant effect in the unexpected direction.</li>
+        <li>Considered the standard approach for most scientific research.</li>
+    </ul>
+
+    <h1>Relation Between Confidence Interval and P-value</h1>
+    <p>If a 95% Confidence Interval does not contain the null hypothesis value (like 0), then the p-value for the corresponding two-tailed test will automatically be less than 0.05. Both methods will lead you to the same mathematical conclusion (rejecting the null hypothesis).</p>
+
+    <h1>What is P-Value ? Why is Z Table Used</h1>
+    <p>The p-value is the probability of obtaining test results at least as extreme as the results actually observed, assuming that the null hypothesis is true.</p>
+    <ul>
+        <li>A smaller p-value (usually $\le 0.05$) provides strong evidence against the null hypothesis.</li>
+        <li>The Z-table is used to map a calculated Z-score to the area under the standard normal curve, giving you the exact probability (p-value).</li>
+    </ul>
+
+    <h1>What Good is Z Table</h1>
+    <p>A Z-table allows statisticians to find the probability that a continuous random variable is less than, greater than, or between specific values in a normal distribution. It standardizes data so different datasets can be compared.</p>
+
+    <h1>How to Create Z Table</h1>
+    <p>A Z-table is created by calculating the cumulative probability (the area under the curve) of the standard normal probability density function from negative infinity up to a specific Z-score using calculus integration.</p>
+    <br>
+
+    <h1>What is T Statistics</h1>
+    <p><strong>Definition : </strong>A test statistic used when the population standard deviation is unknown and the sample size is small (typically $n < 30$). It relies on the sample's standard deviation instead.</p>
+    <p><strong>Example : </strong>Testing whether a new tutoring method significantly improves test scores for a small class of 12 students.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$t = \frac{\bar{X} - \mu}{s / \sqrt{n}}$$
+        </div>
+    </div>
+
+    <h1>One-Tailed and Two-Tailed Tests (T-Test)</h1>
+    <h2>One-Tailed Test</h2>
+    <ul>
+        <li>Evaluates if the sample mean is significantly greater than or less than the population mean.</li>
+        <li>The critical value depends on the degrees of freedom ($df = n - 1$) applied to one tail.</li>
+    </ul>
+    <h2>Two-Tailed Test</h2>
+    <ul>
+        <li>Evaluates if the sample mean is simply different from the population mean in either direction.</li>
+        <li>The critical alpha level is divided by two across both tails of the T-distribution.</li>
+    </ul>
+    <br>
+
+    <h1>What is Type-1 And Type-2 Error</h1>
+    <ul>
+        <li><strong>Type-1 Error (False Positive):</strong> Rejecting the null hypothesis when it is actually true. (Probability = $\alpha$)</li>
+        <li><strong>Type-2 Error (False Negative):</strong> Failing to reject the null hypothesis when the alternative hypothesis is true. (Probability = $\beta$)</li>
+    </ul>
+    <div class="formula-container">
+        <div class="formula">
+            $$\text{Power} = 1 - \beta$$
+        </div>
+    </div>
+    <br>
+
+    <h1>Chi Square Test</h1>
+    <p><strong>Definition : </strong>A non-parametric test used to determine if there is a significant association between categorical variables by comparing observed frequencies to expected frequencies.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}$$
+        </div>
+    </div>
+    <h2>Calculating Chi-Square Test Statistics</h2>
+    <p>Subtract the expected frequency from the observed frequency, square the result, divide by the expected frequency, and sum these values for all categories.</p>
+    <br>
+
+    <h1>ANOVA - Analysis of Variance</h1>
+    <p><strong>Definition : </strong>A statistical test used to determine if there are statistically significant differences between the means of three or more independent groups.</p>
+    <h2>When is ANOVA used</h2>
+    <p>Used when you have one categorical independent variable with three or more groups (e.g., testing three different diets) and a continuous dependent variable (e.g., weight loss).</p>
+    <h2>Calculating ANOVA</h2>
+    <p>It calculates an F-statistic by dividing the variance between the group means by the variance within the groups.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$F = \frac{\text{Mean Square Between}}{\text{Mean Square Within}}$$
+        </div>
+    </div>
+    <br>
+
+    <h1>Bayes</h1>
+    <p><strong>Definition : </strong>Bayes' Theorem is a mathematical formula for determining conditional probability. It updates the probability of a hypothesis as more evidence or information becomes available.</p>
+    <div class="formula-container">
+        <div class="formula">
+            $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+        </div>
+    </div>
+    <ul>
+        <li><strong>$P(A|B)$ - Posterior probability:</strong> Probability of A given B is true.</li>
+        <li><strong>$P(B|A)$ - Likelihood:</strong> Probability of observing B given A is true.</li>
+        <li><strong>$P(A)$ - Prior probability:</strong> Initial probability of A before the evidence.</li>
+        <li><strong>$P(B)$ - Marginal probability:</strong> The overall probability of observing the evidence B.</li>
+    </ul>
+    <br>
+
+</body>
+</html>
